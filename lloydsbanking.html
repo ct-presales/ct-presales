@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="https://main.opendialog-webchat.pages.dev/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+body {
+    margin: 0;
+    
+}
+
+iframe.od-opened#opendialog-chatwindow {
+    background-color: transparent;
+    border: none;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    max-width: initial;
+    max-height: initial;
+    bottom: auto;
+    right: auto;
+    position: relative;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<script>
+    window.openDialogSettings = {
+      url: 'https://claimtechnology.staging-cloud.opendialog.ai',
+      appKey: '3377699725000000|wPpdGMUfEEO3kAiz6RtLrTDDTsiS7YtFFggDuLft523cfc2c',
+      user: {
+        custom: {
+          selected_scenario: '3377699725000000',
+          session_lifetime: 0
+        }
+      },
+
+      customSettings: {
+        openCta: {"title":"Hello!👋 Chat with us!","icon":"https://claimtechnology.staging-cloud.opendialog.ai/images/vendor/@opendialogai/opendialog-design-system-pkg/src/icons/cta-chat-open.svg?9b44efcdecad1a95a5ddc89a0b783056","borderRadius":"50px","width":"280px","height":"80px","background":"#001abf"},
+        openCta: {
+          title: "Hello!👋 Chat with us!",
+          icon: "https://claimtechnology.staging-cloud.opendialog.ai/images/cta-chat-open.svg",
+          borderRadius: "50px",
+          width: "280px",
+          height: "80px",
+          background: "#001abf",
+        },
+      },
+        };
+</script>
+<script src='https://claimtechnology.staging-cloud.opendialog.ai/dist/nu-webchat-js'></script>
+</html>
