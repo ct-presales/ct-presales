@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>First4Lawyers Chat Assistance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Full-page background styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: url('https://i.postimg.cc/htQsr17Y/f4lbg.png') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      color: #333;
+      overflow-x: hidden;
+    }
+    
+    /* Chatbot container - positioned on right */
+    #opendialog-chatwindow {
+      width: 400px;
+      height: 80vh;
+      border: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      transition: all 0.3s ease;
+      background: white; /* Chat background remains white */
+    }
+    
+    /* Small branding at bottom */
+    .branding {
+      position: fixed;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: #001abf;
+      font-size: 14px;
+      z-index: 100;
+      background: rgba(255,255,255,0.7); /* Slightly transparent white for readability */
+      padding: 5px 0;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      #opendialog-chatwindow {
+        width: calc(100% - 40px);
+        height: 65vh;
+        right: 20px;
+        left: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Chatbot will be injected here -->
+  <div id="opendialog-chatwindow"></div>
+  
+  <div class="branding">First4Lawyers Legal Assistance</div>
+
+  <script>
+    window.openDialogSettings = {
+      url: 'https://claimtechnology.staging-cloud.opendialog.ai',
+      appKey: '3377699725000000|wPpdGMUfEEO3kAiz6RtLrTDDTsiS7YtFFggDuLft523cfc2c',
+      user: {
+        custom: {
+          selected_scenario: '3377699725000000',
+          session_lifetime: 0
+        }
+      },
+      customSettings: {
+        openCta: {
+          title: "Hello!👋 Chat with us!",
+          icon: "https://claimtechnology.staging-cloud.opendialog.ai/images/cta-chat-open.svg",
+          borderRadius: "50px",
+          width: "280px",
+          height: "80px",
+          background: "#001abf",
+        },
+      },
+      container: {
+        selector: '#opendialog-chatwindow',
+        mode: 'inline'
+      }
+    };
+  </script>
+  <script src='https://claimtechnology.staging-cloud.opendialog.ai/dist/nu-webchat-js'></script>
+</body>
+</html>
