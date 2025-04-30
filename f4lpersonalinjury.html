@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CT Presales - F4L</title>
+    <title>Chatbot</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-image: url('https://i.postimg.cc/htQsr17Y/f4lbg.png');
@@ -15,75 +14,21 @@
             background-attachment: fixed;
             min-height: 100vh;
         }
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-        }
-        header {
-            background-color: rgba(0, 51, 102, 0.8);
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-            backdrop-filter: blur(5px);
-        }
-        h1 {
-            margin: 0;
-        }
         
-        /* Chatbot iframe styles */
-        .chatbot-container {
+        .chatbot-iframe {
             position: fixed;
             bottom: 20px;
             right: 20px;
             width: 350px;
             height: 500px;
-            z-index: 1000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        
-        .chatbot-container:hover {
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-        }
-        
-        .chatbot-iframe {
-            width: 100%;
-            height: 100%;
             border: none;
             border-radius: 15px;
-        }
-        
-        /* Optional: Add a header to the chatbot */
-        .chatbot-header {
-            background-color: #003366;
-            color: white;
-            padding: 10px 15px;
-            font-weight: bold;
-            border-top-left-radius: 15px;
-            border-top-right-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>CT Presales - F4L</h1>
-        </div>
-    </header>
-    
-    <div class="container">
-        <!-- Your main content here -->
-    </div>
-    
-    <!-- Chatbot container -->
-    <div class="chatbot-container">
-        <div class="chatbot-header">Claim Technology Assistant</div>
-        <iframe class="chatbot-iframe" src="https://capture.webchat-staging.claimtechnology.co.uk/" title="Claim Technology Web Chat"></iframe>
-    </div>
+    <iframe class="chatbot-iframe" src="https://capture.webchat-staging.claimtechnology.co.uk/"></iframe>
 </body>
 </html>
