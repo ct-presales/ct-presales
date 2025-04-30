@@ -1,0 +1,296 @@
+I can't directly generate a PDF, but I can provide you with a **professional, branded HTML template** that you can easily save as a PDF (using your browser or a tool like **Google Docs** or **Microsoft Word**). Here's how:
+
+---
+
+### **Option 1: Quick PDF Conversion**
+1. **Copy the HTML below** and paste it into a file named `claimtechnology_api_guide.html`.
+2. **Open it in Chrome/Firefox** → Press `Ctrl+P` (Print) → Choose **"Save as PDF"**.
+
+### **Option 2: Use Google Docs/Microsoft Word**
+1. Copy the **formatted Markdown version** (below the HTML) into a **Google Doc** or **Word file**.
+2. Adjust styling if needed → Export as PDF.
+
+---
+
+### **Branded HTML Template (Save as `claimtechnology_api_guide.html`)**
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Technology API Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #0066cc;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        .header img {
+            height: 60px;
+        }
+        h1 {
+            color: #0066cc;
+        }
+        h2 {
+            color: #0066cc;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+        pre {
+            background: #f8f8f8;
+            padding: 10px;
+            border-left: 3px solid #0066cc;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #f0f0f0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Claim Technology API Guide</h1>
+        <p>Using Postman to Interact with Claim Technology’s API</p>
+    </div>
+
+    <h2>Prerequisites</h2>
+    <ul>
+        <li>A valid <strong>API Authorization token</strong> (replace <code>*****</code> in headers).</li>
+        <li>Your <strong>Company Domain</strong> (e.g., <code>demo</code>).</li>
+        <li><a href="https://www.postman.com/downloads/">Postman</a> installed.</li>
+    </ul>
+
+    <h2>API 1: Create a User</h2>
+    <p><strong>Endpoint</strong>: <code>POST https://api.claimtechnology.co.uk/api/v2/users/</code></p>
+
+    <h3>Steps:</h3>
+    <ol>
+        <li><strong>Open Postman</strong> and create a new request.</li>
+        <li>Set the HTTP method to <strong>POST</strong>.</li>
+        <li>Enter the URL:
+            <pre>https://api.claimtechnology.co.uk/api/v2/users/</pre>
+        </li>
+        <li>Go to the <strong>Headers</strong> tab and add:
+            <table>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td><code>Content-Type</code></td>
+                    <td><code>application/json</code></td>
+                </tr>
+                <tr>
+                    <td><code>Authorization</code></td>
+                    <td><code>*****</code> (your token)</td>
+                </tr>
+                <tr>
+                    <td><code>Company-Domain</code></td>
+                    <td><code>demo</code></td>
+                </tr>
+            </table>
+        </li>
+        <li>Navigate to the <strong>Body</strong> tab, select <strong>raw</strong>, and paste this JSON (adjust values as needed):
+            <pre>{
+  "title": "TITLE",
+  "first_name": "FIRSTNAME",
+  "last_name": "LASTNAME",
+  "role_ids": [322],
+  "phone": "0123456789",
+  "email": "email@email.com",
+  "active": true,
+  "skip_welcome": true
+}</pre>
+        </li>
+        <li>Click <strong>Send</strong>.</li>
+        <li><strong>Successful response</strong>: <code>201 Created</code> with the new user’s details.</li>
+    </ol>
+
+    <h2>API 2: Create a Claim</h2>
+    <p><strong>Endpoint</strong>: <code>POST https://api.claimtechnology.co.uk/api/v2/claims</code></p>
+
+    <h3>Steps:</h3>
+    <ol>
+        <li>Create another <strong>POST</strong> request in Postman.</li>
+        <li>Enter the URL:
+            <pre>https://api.claimtechnology.co.uk/api/v2/claims</pre>
+        </li>
+        <li>Add these <strong>Headers</strong>:
+            <table>
+                <tr>
+                    <th>Key</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td><code>Content-Type</code></td>
+                    <td><code>application/json</code></td>
+                </tr>
+                <tr>
+                    <td><code>Authorization</code></td>
+                    <td><code>*****</code> (your token)</td>
+                </tr>
+                <tr>
+                    <td><code>Company-Domain</code></td>
+                    <td><code>demo</code></td>
+                </tr>
+            </table>
+        </li>
+        <li>In the <strong>Body</strong> tab (raw/JSON), paste:
+            <pre>{
+  "claim_type_id": 331,
+  "external_ref": "YOUR INTERNAL REFERENCE",
+  "status": "open",
+  "user_ids": [0000, 0000]
+}</pre>
+            Replace <code>user_ids</code> with valid user IDs from your system.
+        </li>
+        <li>Click <strong>Send</strong>.</li>
+        <li><strong>Successful response</strong>: <code>201 Created</code> with the new claim’s metadata.</li>
+    </ol>
+
+    <h2>Troubleshooting</h2>
+    <ul>
+        <li><strong>401 Unauthorized</strong>: Check your <code>Authorization</code> token.</li>
+        <li><strong>400 Bad Request</strong>: Validate your JSON payload.</li>
+        <li><strong>404 Not Found</strong>: Confirm the endpoint URL.</li>
+    </ul>
+
+    <div class="footer">
+        <p>For further support, visit <a href="https://www.claimtechnology.co.uk">www.claimtechnology.co.uk</a></p>
+    </div>
+</body>
+</html>
+```
+
+---
+
+### **Markdown Version (for Google Docs/Word)**
+```markdown
+# Claim Technology API Guide  
+**Using Postman to Interact with Claim Technology’s API**  
+
+---
+
+## Prerequisites  
+- A valid **API Authorization token** (replace `*****` in headers).  
+- Your **Company Domain** (e.g., `demo`).  
+- [Postman](https://www.postman.com/downloads/) installed.  
+
+---
+
+## API 1: Create a User  
+**Endpoint**: `POST https://api.claimtechnology.co.uk/api/v2/users/`  
+
+### Steps:  
+1. **Open Postman** and create a new request.  
+2. Set the HTTP method to **POST**.  
+3. Enter the URL:  
+   ```  
+   https://api.claimtechnology.co.uk/api/v2/users/  
+   ```  
+4. Go to the **Headers** tab and add:  
+
+   | Key               | Value                |  
+   |-------------------|----------------------|  
+   | `Content-Type`    | `application/json`   |  
+   | `Authorization`   | `*****` (your token) |  
+   | `Company-Domain`  | `demo`               |  
+
+5. In the **Body** tab (raw/JSON), paste:  
+   ```json  
+   {
+     "title": "TITLE",
+     "first_name": "FIRSTNAME",
+     "last_name": "LASTNAME",
+     "role_ids": [322],
+     "phone": "0123456789",
+     "email": "email@email.com",
+     "active": true,
+     "skip_welcome": true
+   }  
+   ```  
+6. Click **Send**.  
+7. **Successful response**: `201 Created` with the new user’s details.  
+
+---
+
+## API 2: Create a Claim  
+**Endpoint**: `POST https://api.claimtechnology.co.uk/api/v2/claims`  
+
+### Steps:  
+1. Create another **POST** request in Postman.  
+2. Enter the URL:  
+   ```  
+   https://api.claimtechnology.co.uk/api/v2/claims  
+   ```  
+3. Add these **Headers**:  
+
+   | Key               | Value                |  
+   |-------------------|----------------------|  
+   | `Content-Type`    | `application/json`   |  
+   | `Authorization`   | `*****` (your token) |  
+   | `Company-Domain`  | `demo`               |  
+
+4. In the **Body** tab (raw/JSON), paste:  
+   ```json  
+   {
+     "claim_type_id": 331,
+     "external_ref": "YOUR INTERNAL REFERENCE",
+     "status": "open",
+     "user_ids": [0000, 0000]  
+   }  
+   ```  
+5. Click **Send**.  
+6. **Successful response**: `201 Created` with the new claim’s metadata.  
+
+---
+
+### Troubleshooting  
+- **401 Unauthorized**: Check your `Authorization` token.  
+- **400 Bad Request**: Validate your JSON payload.  
+- **404 Not Found**: Confirm the endpoint URL.  
+
+For further support, visit [www.claimtechnology.co.uk](https://www.claimtechnology.co.uk).  
+```
+
+---
+
+### **How to Brand Further**
+- **Add a logo**: Replace the `<h1>` in the HTML with an `<img>` tag linking to your logo.  
+- **Adjust colors**: Modify the `#0066cc` (blue) in the CSS to match your brand.  
+
+Let me know if you'd like help tweaking the design!
