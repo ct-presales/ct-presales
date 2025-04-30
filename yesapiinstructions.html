@@ -110,39 +110,14 @@
         </li>
         <li>Navigate to the <strong>Body</strong> tab, select <strong>raw</strong>, and paste this JSON (adjust values as needed):
             <pre>{
-{
-  "id": 1,
-  "internal_ref": "ORG00001",
-  "claim_type_id": 1,
-  "status": "open",
-  "ref_id": "abc",
-  "contacts": [
-    {
-      "role": "agent",
-      "type": "user",
-      "id": "1"
-    },
-    {
-      "role": "customer",
-      "type": "user",
-      "id": "2"
-    },
-    {
-      "role": "vendor",
-      "type": "organization",
-      "id": "3"
-    }
-  ],
-  "details": [
-    {
-      "policynumber": "12345",
-      "label": "Policy Info",
-      "group_label": "Dates",
-      "value": "2014-03-05",
-      "id": "policy_date"
-    }
-  ]
-}
+  "title": "TITLE",
+  "first_name": "FIRSTNAME",
+  "last_name": "LASTNAME",
+  "role_ids": [322],
+  "phone": "0123456789",
+  "email": "email@email.com",
+  "active": true,
+  "skip_welcome": true
 }</pre>
         </li>
         <li>Click <strong>Send</strong>.</li>
@@ -179,14 +154,40 @@
             </table>
         </li>
         <li>In the <strong>Body</strong> tab (raw/JSON), paste:
-            <pre>{
-  "claim_type_id": 331,
-  "external_ref": "YOUR INTERNAL REFERENCE",
+            <pre>
+{
+  "id": 1,
+  "internal_ref": "ORG00001",
+  "claim_type_id": 1,
   "status": "open",
-  "user_ids": [0000, 0000]
-  "policy_number":"123456"
-  "policy_start":"dd/mm/yyyy"
-  "policy_end":"dd/mm/yyyy"  
+  "ref_id": "abc",
+  "contacts": [
+    {
+      "role": "agent",
+      "type": "user",
+      "id": "1"
+    },
+    {
+      "role": "customer",
+      "type": "user",
+      "id": "2"
+    },
+    {
+      "role": "vendor",
+      "type": "organization",
+      "id": "3"
+    }
+  ],
+  "details": [
+    {
+      "policynumber": "12345",
+      "label": "Policy Info",
+      "group_label": "Dates",
+      "value": "2014-03-05",
+      "id": "policy_date"
+    }
+  ]
+}
 }</pre>
             Replace <code>user_ids</code> with valid user IDs from your system.
         </li>
