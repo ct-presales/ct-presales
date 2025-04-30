@@ -78,7 +78,7 @@
         <li><a href="https://www.postman.com/downloads/">Postman</a> installed.</li>
     </ul>
 
-    <h2>API 1: Create a User</h2>
+    <h2>API 1: Create a User/Customer</h2>
     <p><strong>Endpoint</strong>: <code>POST https://api.claimtechnology.co.uk/api/v2/users/</code></p>
 
     <h3>Steps:</h3>
@@ -124,7 +124,7 @@
         <li><strong>Successful response</strong>: <code>201 Created</code> with the new user’s details.</li>
     </ol>
 
-    <h2>API 2: Create a Claim</h2>
+    <h2>API 2: Create a Claim with Policy Details</h2>
     <p><strong>Endpoint</strong>: <code>POST https://api.claimtechnology.co.uk/api/v2/claims</code></p>
 
     <h3>Steps:</h3>
@@ -159,6 +159,9 @@
   "external_ref": "YOUR INTERNAL REFERENCE",
   "status": "open",
   "user_ids": [0000, 0000]
+  "policy_number":"123456"
+  "policy_start":"dd/mm/yyyy"
+  "policy_end":"dd/mm/yyyy"  
 }</pre>
             Replace <code>user_ids</code> with valid user IDs from your system.
         </li>
