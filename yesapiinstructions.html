@@ -70,7 +70,14 @@
         <h1>Claim Technology API Guide</h1>
         <p>Using Postman to Interact with Claim Technology’s API</p>
     </div>
-
+  
+   <h2>Objectice</h2>
+    <ul>
+        <li>Creating a new policy record with a customer record</li>
+        <li>Generating a Wallet Pass dynamically based on the policy record</li>
+        <li><a href="https://www.postman.com/downloads/">Postman</a> installed.</li>
+    </ul>
+    
     <h2>Prerequisites</h2>
     <ul>
         <li>A valid <strong>API Authorization token</strong> (replace <code>*****</code> in headers).</li>
@@ -158,7 +165,7 @@
 {
   "id": 1,
   "internal_ref": "ORG00001",
-  "claim_type_id": 1,
+  "claim_type_id": 373,
   "status": "open",
   "ref_id": "abc",
   "contacts": [
@@ -189,7 +196,7 @@
   ]
 }
 }</pre>
-            Replace <code>user_ids</code> with valid user IDs from your system.
+            Replace <code>user_ids</code> with valid user IDs from the create user api.
         </li>
         <li>Click <strong>Send</strong>.</li>
         <li><strong>Successful response</strong>: <code>201 Created</code> with the new claim’s metadata.</li>
