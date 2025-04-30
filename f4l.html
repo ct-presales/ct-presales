@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>First4Lawyers Claims Assessment</title>
-  <link rel="stylesheet" href="https://main.opendialog-webchat.pages.dev/style.css">
+  <title>First4Lawyers Chat Assistance</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    /* Background styling with your image */
+    /* Full-page background styling */
     body {
       margin: 0;
       padding: 0;
@@ -17,103 +16,47 @@
       color: #333;
     }
     
-    /* Overlay to improve text readability */
+    /* Semi-transparent overlay for readability */
     .overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(255, 255, 255, 0.85);
+      background-color: rgba(255, 255, 255, 0.9);
       z-index: -1;
     }
     
-    /* Container for the content */
-    .content-container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-      position: relative;
-    }
-    
-    /* Welcome message styling */
-    .welcome-message {
-      background: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-      border-left: 5px solid #001abf;
-    }
-    
-    .welcome-message h1 {
-      color: #001abf;
-      margin-top: 0;
-    }
-    
-    /* Chatbot styling - more integrated look */
-    .chatbot-integration {
+    /* Chatbot container - minimal styling */
+    #opendialog-chatwindow {
       width: 100%;
-      height: 600px;
+      height: 100vh;
       border: none;
-      border-radius: 10px;
-      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
     }
     
-    /* Contact info styling */
-    .contact-info {
+    /* Small branding at bottom */
+    .branding {
+      position: fixed;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
       text-align: center;
-      margin: 20px 0;
-      font-size: 1.2rem;
       color: #001abf;
-      font-weight: bold;
-    }
-    
-    /* Footer notice */
-    .footer-notice {
-      font-size: 0.9rem;
-      text-align: center;
-      margin-top: 20px;
-      color: #666;
-    }
-    
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .content-container {
-        padding: 10px;
-      }
-      
-      .chatbot-integration {
-        height: 500px;
-      }
+      font-size: 14px;
+      z-index: 100;
     }
   </style>
 </head>
 <body>
   <div class="overlay"></div>
   
-  <div class="content-container">
-    <div class="welcome-message">
-      <h1>Welcome to First4Lawyers' Online Claims Assessment</h1>
-      <p>Hi, I am Cassie and I am here to help get your personal injury claim started.</p>
-      <p>We know your time is precious, so we're using the latest AI technology to help you make a claim, regardless of the time of day.</p>
-      <p>I know exactly what information we need to process your claim so why not start your claim with me. This means you can get on with your day, knowing all the details you have provided have been saved on our systems and will be dealt with shortly.</p>
-      <p>Thanks,</p>
-      <p>Cassie</p>
-    </div>
-    
-    <div class="contact-info">
-      0808 501 7149<br>
-      <strong>Available 24 hours a day, 7 days a week</strong>
-    </div>
-    
-    <!-- Chatbot will be injected here -->
-    <div id="opendialog-chatwindow" class="chatbot-integration"></div>
-    
-    <div class="footer-notice">
-      Before you start, take a look at our privacy policy and terms. Submitting an enquiry means you agree to be contacted by First4Lawyers or its partner First4lawyers claims.
-    </div>
-  </div>
+  <!-- Chatbot will be injected here -->
+  <div id="opendialog-chatwindow"></div>
+  
+  <div class="branding">First4Lawyers Legal Assistance</div>
 
   <script>
     window.openDialogSettings = {
@@ -140,13 +83,6 @@
         mode: 'inline'
       }
     };
-    
-    // Fix for URL protocol
-    document.addEventListener('DOMContentLoaded', function() {
-      if (window.openDialogSettings.url.startsWith('https://')) {
-        window.openDialogSettings.url = window.openDialogSettings.url.replace('https://', 'https://');
-      }
-    });
   </script>
   <script src='https://claimtechnology.staging-cloud.opendialog.ai/dist/nu-webchat-js'></script>
 </body>
