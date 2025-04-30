@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Legal Assistance Chatbot</title>
+  <link rel="stylesheet" href="https://main.opendialog-webchat.pages.dev/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Background styling */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+    }
+    
+    /* Container for the chatbot */
+    .chatbot-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    /* Header styling */
+    .chatbot-header {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #001abf;
+    }
+    
+    .chatbot-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .chatbot-header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    
+    /* Chatbot iframe styling */
+    .chatbot-iframe-container {
+      width: 100%;
+      max-width: 800px;
+      height: 600px;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 26, 191, 0.2);
+      overflow: hidden;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    iframe.od-opened#opendialog-chatwindow {
+      background-color: transparent;
+      border: none;
+      display: block;
+      width: 100%;
+      height: 100%;
+      max-width: initial;
+      max-height: initial;
+      position: relative;
+    }
+    
+    /* Footer styling */
+    .chatbot-footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .chatbot-header h1 {
+        font-size: 2rem;
+      }
+      
+      .chatbot-iframe-container {
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="chatbot-container">
+    <div class="chatbot-header">
+      <h1>Legal Assistance Chatbot</h1>
+      <p>Get instant help with your legal questions from our AI assistant</p>
+    </div>
+    
+    <div class="chatbot-iframe-container">
+      <!-- Chatbot will be injected here -->
+    </div>
+    
+    <div class="chatbot-footer">
+      <p>Available 24/7 to answer your preliminary legal questions</p>
+    </div>
+  </div>
+
+  <script>
+    window.openDialogSettings = {
+      url: 'https://claimtechnology.staging-cloud.opendialog.ai',
+      appKey: '3377699725000000|wPpdGMUfEEO3kAiz6RtLrTDDTsiS7YtFFggDuLft523cfc2c',
+      user: {
+        custom: {
+          selected_scenario: '3377699725000000',
+          session_lifetime: 0
+        }
+      },
+      customSettings: {
+        openCta: {
+          title: "Hello!👋 Chat with us!",
+          icon: "https://claimtechnology.staging-cloud.opendialog.ai/images/cta-chat-open.svg",
+          borderRadius: "50px",
+          width: "280px",
+          height: "80px",
+          background: "#001abf",
+        },
+      },
+    };
+  </script>
+  <script src='https://claimtechnology.staging-cloud.opendialog.ai/dist/nu-webchat-js'></script>
+</body>
+</html>
