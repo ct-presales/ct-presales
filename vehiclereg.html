@@ -1,58 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Vehicle Registration Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        * {
+        body {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: #f0f0f0;
         }
-        
-        body {
-            background-color: #f5f5f5;
-            font-family: Arial, sans-serif;
-            overflow-y: scroll;
-            overflow-x: hidden;
-        }
-        
-        .website-simulation {
-            width: 100%;
-            min-height: 100vh;
-        }
-        
-        .full-width-image {
-            width: 100%;
+        #website-image {
             display: block;
-            image-rendering: crisp-edges;
-            image-rendering: -webkit-optimize-contrast;
+            width: 100%;
+            height: auto;
         }
-        
-        .content-spacer {
-            height: 150vh;
-            background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+        #scroll-space {
+            height: 100vh;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
-    <div class="website-simulation">
-        <img class="full-width-image" 
-             src="https://i.postimg.cc/t4XvHP6B/Vehicle-Registration-input-3-1.png" 
-             alt="Vehicle Registration Form"
-             onload="this.style.opacity=1; this.style.width=Math.min(this.naturalWidth, window.innerWidth)+'px';">
-    </div>
-    <div class="content-spacer"></div>
-    
-    <script>
-        // Ensure perfect display on resize
-        window.addEventListener('resize', function() {
-            const img = document.querySelector('.full-width-image');
-            if (img.naturalWidth) {
-                img.style.width = Math.min(img.naturalWidth, window.innerWidth) + 'px';
-            }
-        });
-    </script>
+    <img id="website-image" src="https://i.postimg.cc/t4XvHP6B/Vehicle-Registration-input-3-1.png" alt="">
+    <div id="scroll-space"></div>
 </body>
 </html>
