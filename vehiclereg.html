@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Registration Form</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .image-container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Add some extra space at the bottom to make it scrollable */
+        .spacer {
+            height: 1000px;
+            background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
+        }
+        
+        /* Simple header to make it look more like a real site */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">DMV Portal</div>
+    </header>
+    
+    <div class="image-container">
+        <img src="https://i.postimg.cc/Mpk33NZJ/Vehicle-Registration-input-3.png" alt="Vehicle Registration Form">
+    </div>
+    
+    <div class="spacer"></div>
+    
+    <script>
+        // Optional: Add some scrolling behavior to make it more interactive
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const header = document.querySelector('header');
+            
+            // Simple effect - header becomes smaller when scrolling
+            if (scrollPosition > 50) {
+                header.style.padding = '10px 20px';
+            } else {
+                header.style.padding = '15px 20px';
+            }
+        });
+    </script>
+</body>
+</html>
